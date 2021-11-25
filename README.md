@@ -1,0 +1,1 @@
+These are [terraform](https://www.terraform.io/) scripts for deploying an EC2 instance for teaching. By default, it launches the *Ubuntu deep learning base* AMI which has docker pre-installed. To deploy docker containers on the machine, have a look at [https://github.com/GeertvanGeest/AWS-docker](https://github.com/GeertvanGeest/AWS-docker). 
