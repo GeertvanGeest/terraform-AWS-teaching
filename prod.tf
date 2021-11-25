@@ -16,6 +16,10 @@ variable "key_name" {
     type = string
 }
 
+variable "volume_size" {
+    type = number
+}
+
 provider "aws" {
     profile = "default"
     region  = "eu-central-1"
@@ -27,6 +31,11 @@ resource "aws_instance" "train" {
     vpc_security_group_ids = [aws_security_group.train.id]
     user_data              = file("init-script.sh")
     key_name               = var.key_name
+
+    root_block_device {
+        volume_size = var.volume_size
+        delete_on_termination = true
+    }
 
     tags = {
         "course" = var.course_id
