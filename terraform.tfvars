@@ -3,4 +3,4 @@ web_image_id            = "ami-0efd65840fe845347" # Deep Learning Base AMI (Ubun
 web_instance_type       = "t2.medium" # instance type
 course_id               = "20211103_NGS6" # will be used as tag with name 'course'
 key_name                = "key_ubuntu_gvg" # key name. Should already be generated with the AWS console. 
-volume_size             = 512 # volume size in Gb
+volume_size             = 128 # volume size in Gb

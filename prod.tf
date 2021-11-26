@@ -52,6 +52,7 @@ resource "aws_security_group" "train" {
         protocol    = "tcp"
         cidr_blocks = var.whitelist
     }
+    
     ingress {
         from_port   = 10000
         to_port     = 10050
@@ -65,6 +66,13 @@ resource "aws_security_group" "train" {
         protocol    = "tcp"
         cidr_blocks = var.whitelist
 
+    }
+
+    egress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
     tags = {
