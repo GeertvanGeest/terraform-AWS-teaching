@@ -47,6 +47,13 @@ resource "aws_security_group" "train" {
     description = "port ranges containers"
 
     ingress {
+        from_port   = 7000
+        to_port     = 7050
+        protocol    = "tcp"
+        cidr_blocks = var.whitelist
+    }
+
+    ingress {
         from_port   = 9000
         to_port     = 9050
         protocol    = "tcp"
